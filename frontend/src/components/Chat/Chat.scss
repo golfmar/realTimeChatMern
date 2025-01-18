@@ -1,0 +1,96 @@
+@import '../../scss/common/colors.scss';
+
+.uploadedFile {
+  max-width: 150px;
+  max-height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.noMessages {
+  position: relative;
+  z-index: 4;
+  color: $blue-deep;
+}
+
+.fileInput {
+  background-color: whitesmoke !important;
+  border-radius: 10px;
+}
+
+.messageInput {
+  background-color: whitesmoke !important;
+  border-radius: 10px;
+  width: calc(100% - 70px) !important;
+
+  .MuiInputBase-root {
+    border-radius: 10px;
+  }
+}
+
+.message-exect {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 15px;
+}
+
+.chat {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background-color: $l-light !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fileInput {
+  max-width: 40px;
+}
+
+.cl {
+  position: relative;
+}
+
+.sendButton {
+  background-color: $blue !important;
+  color: white !important;
+  box-shadow: 1px 5px 20px -5px #000000;
+  cursor: pointer;
+  border-left: 2px solid #939393;
+  border-right: 2px solid #939393;
+  transition: background 1.5s, box-shadow 1.8s, color 1.8s, transform 0.5s;
+  position: absolute !important;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+  right: 20px;
+  border-radius: 100% !important;
+  min-width: 2px !important;
+  padding: 10px !important;
+  width: fit-content !important;
+
+  span {
+    margin: 0 0 0 0;
+
+  }
+
+  svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  &:hover {
+    box-shadow: 1px 5px 15px -5px #000000;
+  }
+}
+
+
+// ==========================================

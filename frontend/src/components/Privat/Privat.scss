@@ -1,0 +1,89 @@
+@import "../../scss/common/colors.scss";
+
+.privat {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, 48%);
+  // gap: 20px;
+  // justify-content: center;
+
+
+  &-title {
+    font-weight: 700 !important;
+    margin: 20px 0 0 0 !important;
+  }
+
+  &-date {
+    font-size: 12px;
+  }
+
+  &-text {
+    margin: 10px 0 !important;
+    padding: 2px 0 2px 6px !important;
+    margin: 0 0 0 0 !important;
+    line-height: 1 !important;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &-item {
+    border-bottom: 1px solid $a3;
+    margin: 0 0 10px 0;
+    padding: 5px !important;
+
+    &._is-received {
+      .privat-text {
+        background-color: $l-light;
+      }
+    }
+
+    &._is-sent {
+      .privat-text {
+        background-color: $o;
+      }
+
+      margin-left: 30px;
+
+    }
+
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+   
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.privat-input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 0 0 0;
+  background-color: whitesmoke;
+
+}
+
+.buttons {
+  margin: 5px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.persona-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: $b1 !important;
+}
+
+
+
+.clear-button {
+  border-radius: 5px !important;
+}
