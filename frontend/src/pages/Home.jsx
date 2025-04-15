@@ -13,6 +13,7 @@ const HomePage = ({ messages, socket }) => {
         style={{ marginBottom: "20px", textAlign: "center" }}
       >
         Welcome to the Chat!
+        Enjoy the chat!
       </Typography>
       <Chat messages={messages} socket={socket} />
     </div>
