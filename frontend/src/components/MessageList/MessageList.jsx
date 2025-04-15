@@ -19,7 +19,7 @@ function MessageList({ messages }) {
   const [currentMessages, setCurrentMessages] = useState([]);
   const messagesPerPage = 10;
   const [openCommentModal, setOpenCommentModal] = useState();
-  const authors = messages.reduce((acc, message) => {
+  const authors = messages?.reduce((acc, message) => {
     if (!acc.some((author) => author.author === message.author)) {
       acc.push({ author: message.author, name: message.name });
     }
