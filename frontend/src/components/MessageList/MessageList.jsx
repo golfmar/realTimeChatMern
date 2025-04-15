@@ -12,7 +12,6 @@ import "./MessageList.scss";
 import ModalComponent from "../Modal/Modal";
 import { useSelector, useDispatch } from "react-redux";
 import { setErrorMessage } from "../../redux/actions/errorActions";
-import { set } from "mongoose";
 function MessageList({ messages }) {
   const [page, setPage] = useState(1);
   const [selectedAuthor, setSelectedAuthor] = useState("");
@@ -27,16 +26,17 @@ function MessageList({ messages }) {
   const [commentIdToEdit, setCommentIdToEdit] = useState(null);
   const [authors, setAuthors] = useState([]);
   useEffect(() => {
- 
-  if (messages.length > 0) {
-     setAuthors( messages.reduce((acc, message) => {
-    if (!acc.some((author) => author.author === message.author)) {
-      acc.push({ author: message.author, name: message.name });
+    if (messages.length > 0) {
+      setAuthors(
+        messages.reduce((acc, message) => {
+          if (!acc.some((author) => author.author === message.author)) {
+            acc.push({ author: message.author, name: message.name });
+          }
+          return acc;
+        }, [])
+      );
     }
-    return acc;
-  }, []))
-  }
-}, [messages]);
+  }, [messages]);
   // ========== Фильтрация сообщений и пагинация
   useEffect(() => {
     let temp = messages;
@@ -108,11 +108,12 @@ function MessageList({ messages }) {
           className="author-select"
         >
           <MenuItem value="All Authors">All Authors</MenuItem>
-          {authors && authors.map((el, index) => (
-            <MenuItem key={index} value={el.author}>
-              {el.name}
-            </MenuItem>
-          ))}
+          {authors &&
+            authors.map((el, index) => (
+              <MenuItem key={index} value={el.author}>
+                {el.name}
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
 
